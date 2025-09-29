@@ -78,15 +78,15 @@ flask driver status 1
 ```
 
 
-
 ## Resident Commands
 
 ### View Resident Inbox
+
 ```bash
 flask resident inbox <resident_id>
 ```
 - **resident_id**: Integer ID of the resident
-- Shows scheduled delivery drivers for the resident's street
+- Shows scheduled delivery drivers for the particular resident's street
 
 **Example:**
 ```bash
@@ -99,7 +99,7 @@ flask resident request-stop <resident_id> <driver_id>
 ```
 - **resident_id**: Integer ID of the resident
 - **driver_id**: Integer ID of the driver
-- Allows residents to request a stop from the driver
+- Allows residents to request a stop from the driver (their order and delivery instructions)
 
 
 **Example:**
