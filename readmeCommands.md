@@ -37,11 +37,8 @@ This command creates the database and populates it with:
 
 ### List All Users
 ```bash
-flask user list [format]
+flask user list 
 ```
-- **format**: `string` (default) or `json`
-- Shows all users with their IDs, usernames, and basic information
-
 
 ## Route Commands
 
@@ -51,20 +48,15 @@ flask route list
 ```
 - Displays all available delivery routes with route IDs and street names
 
-## Driver Commands
 
-### List All Drivers
-```bash
-flask driver list
-```
-- Shows all drivers with their IDs, names, locations, status, and assigned routes
+## Driver Commands
 
 ### Select Route for Driver
 ```bash
 flask driver select-route <driver_id>
 ```
 - **driver_id**: Integer ID of the driver
-- Interactive command that allows driver to choose from available routes
+- Allows drivers to choose their delivery route
 - Automatically sets driver status to "Active" upon route assignment
 
 **Example:**
@@ -78,20 +70,16 @@ flask driver status <driver_id>
 ```
 - **driver_id**: Integer ID of the driver
 - Toggles driver between Active and Inactive status
-- Shows current route assignment if active
+- Shows current route if active
 
 **Example:**
 ```bash
 flask driver status 1
 ```
 
-## Resident Commands
 
-### List All Residents
-```bash
-flask resident list
-```
-- Shows all residents with their IDs, names, addresses, and street assignments
+
+## Resident Commands
 
 ### View Resident Inbox
 ```bash
@@ -99,7 +87,6 @@ flask resident inbox <resident_id>
 ```
 - **resident_id**: Integer ID of the resident
 - Shows scheduled delivery drivers for the resident's street
-- Displays driver status, location, and contact information
 
 **Example:**
 ```bash
@@ -112,9 +99,8 @@ flask resident request-stop <resident_id> <driver_id>
 ```
 - **resident_id**: Integer ID of the resident
 - **driver_id**: Integer ID of the driver
-- Interactive command for requesting delivery items
-- Validates that driver is assigned to resident's street
-- Allows special delivery instructions
+- Allows residents to request a stop from the driver
+
 
 **Example:**
 ```bash
@@ -126,9 +112,8 @@ flask resident request-stop 1 2
 flask resident track-driver <resident_id> [driver_id]
 ```
 - **resident_id**: Integer ID of the resident
-- **driver_id**: Optional - specific driver to track
-- Without driver_id: shows all drivers on resident's street
-- With driver_id: shows specific driver's status and location
+- **driver_id**: - Without driver_id: shows all drivers on resident's street
+                 - With driver_id: shows specific driver's status and location
 
 **Examples:**
 ```bash

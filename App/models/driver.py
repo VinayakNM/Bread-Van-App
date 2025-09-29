@@ -35,6 +35,8 @@ class Driver(User):
         }
 
 
+    
+
     def scheduleRoute(self, resident):
         schedule = Schedule(driverId=self.driverId, residentId=resident.residentId, street=resident.address)
         db.session.add(schedule)
